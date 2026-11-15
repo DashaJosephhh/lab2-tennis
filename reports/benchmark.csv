@@ -1,0 +1,4 @@
+rows,matches,scan_median_us,index_median_us,speedup,scan_examined,index_examined,index_height
+1000,1,95.523990,12.660000,7.55,1000,1,10
+10000,10,447.680990,5.164000,86.69,10000,10,10
+100000,100,4291.554000,13.881000,309.17,100000,100,10

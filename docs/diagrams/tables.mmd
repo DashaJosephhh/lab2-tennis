@@ -1,0 +1,25 @@
+erDiagram
+    MEMBERS ||--o{ BOOKINGS : "участник бронирует"
+    COURTS ||--o{ BOOKINGS : "корт для брони"
+
+    MEMBERS {
+        INT id PK
+        STRING full_name
+        DATE joined
+    }
+    COURTS {
+        INT id PK
+        STRING name
+        DOUBLE hourly_rate
+        BOOLEAN indoor
+    }
+    BOOKINGS {
+        INT id PK
+        INT member_id FK
+        INT court_id FK
+        DATE booking_date
+        INT start_minute
+        INT duration_minutes
+        DOUBLE total_price
+        BOOLEAN paid
+    }

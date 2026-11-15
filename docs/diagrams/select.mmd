@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant E as Engine
+    participant I as AvlIndex
+    participant T as Table
+
+    E->>E: Проверить столбцы и условие WHERE
+    E->>I: Найти подходящие значения
+    I-->>E: Номера нужных записей
+    loop Для каждой найденной записи
+        E->>T: Получить строку по первичному ключу
+        T-->>E: Строка
+        E->>E: Проверить остальные условия
+    end
+    E-->>E: Собрать результат SELECT

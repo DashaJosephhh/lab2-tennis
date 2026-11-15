@@ -1,0 +1,27 @@
+classDiagram
+    direction TB
+
+    class Main
+    class Sql
+    class Engine
+    class Repository {
+        <<interface>>
+        load()
+        save(database)
+    }
+    class FileRepository
+    class Database
+    class Table
+    class Column
+    class Row
+    class AvlIndex
+
+    Main --> Sql : разбирает запрос
+    Main --> Engine : передаёт команду
+    Engine --> Repository : загружает и сохраняет
+    FileRepository ..|> Repository : реализует
+    Engine --> Database : работает с базой
+    Database "1" *-- "0..*" Table : таблицы
+    Table "1" *-- "1..*" Column : столбцы
+    Table "1" *-- "0..*" Row : записи
+    Table "1" *-- "0..*" AvlIndex : индексы

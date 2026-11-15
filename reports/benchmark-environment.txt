@@ -1,0 +1,11 @@
+Дата запуска (локальная): 2026-11-14T23:16:33.042
+Java: 1.8.0_351 / Java HotSpot(TM) 64-Bit Server VM
+ОС: Windows 11 10.0 amd64
+CPU: Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+Доступно процессоров JVM: 8
+Макс. память JVM: 477626368
+warmup=80, rounds=7, repeats=100
+SQL: SELECT id,total_price FROM bookings WHERE booking_date='2026-05-08';
+Время: System.nanoTime; медиана средних времен серий, микросекунды/запрос.
+Измеряется SELECT после загрузки снимка с диска; без парсинга SQL и вывода.
+Данные: 1000 различных дат, равномерное распределение; выборка 0.1%.
